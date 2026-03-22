@@ -56,6 +56,12 @@ generateArrayBtn.addEventListener("click", () => {
 const sortArray = () => { 
   const numbers = Array.from(startingArrayContainer.children).map(element => parseInt(element.textContent));
 
+  Array.from(arrayContainer.children).forEach(child => {
+    if (child !== startingArrayContainer) {
+      child.remove();
+    }
+  });
+
   for(let i = 0; i < numbers.length-1; i++){
     let noSwap = true;
     for(let j = 0; j < numbers.length-1; j++){
